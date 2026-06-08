@@ -4,41 +4,40 @@ namespace CsharpBasics {
     internal class Program {
         static void Main(string[] args) {
 
-            //Exercise
+            //  ---------  Conditionals
 
-            string completeName = Console.ReadLine();
-            int bedrooms = int.Parse( Console.ReadLine());
-            double price = double.Parse(Console.ReadLine());
+            Console.WriteLine("what's the time now?");
+            int time = int.Parse(Console.ReadLine());
 
-            string[] phrase = Console.ReadLine().Split(" ");
+            if (time <= 12) {
+                Console.WriteLine("good morning");
+            }
 
-            string lastName = phrase[0];
-            int age = int.Parse( phrase[1]);
-            double height = double.Parse(phrase[2]);
+            else if (time > 12 && time < 18) {
+                Console.WriteLine("good afternoon");
+            }
 
-
-            // --- Displaying the result
-            Console.WriteLine("\n--- Captured Information ---");
-            Console.WriteLine($"Full Name: {completeName}");
-            Console.WriteLine($"Bedrooms: {bedrooms}");
-            Console.WriteLine($"Price: {price}");
-            Console.WriteLine($"Last Name: {lastName}");
-            Console.WriteLine($"Age: {age}");
-            Console.WriteLine($"Height: {height}");
+            else {
+                Console.WriteLine("good night");
+            }
 
 
 
+            //Console.WriteLine("type a number to verify if is par or impar");
+
+            //int choosedNumber = int.Parse(Console.ReadLine());
+
+            //if (choosedNumber % 2 != 0) {
+            //    Console.WriteLine("your number is impar");
+
+            //}
+
+            //else {
+            //    Console.WriteLine("your number is par");
+            //}
 
 
-
-
-
-
-
-
-
-
-
+            // ------- Learning transforming data 
 
 
             //int n1 = int.Parse(Console.ReadLine());
@@ -56,18 +55,6 @@ namespace CsharpBasics {
 
             //Console.WriteLine($"you wrote {height}");
 
-
-
-
-
-
-
-
-
-
-
-
-
             //string[] phrase = Console.ReadLine().Split(" ");
 
             //string a = phrase[0];
@@ -79,49 +66,36 @@ namespace CsharpBasics {
 
 
 
+            ////Exercise 
+
+            //string completeName = Console.ReadLine();
+            //int bedrooms = int.Parse( Console.ReadLine());
+            //double price = double.Parse(Console.ReadLine());
+
+            //string[] phrase = Console.ReadLine().Split(" ");
+
+            //string lastName = phrase[0];
+            //int age = int.Parse( phrase[1]);
+            //double height = double.Parse(phrase[2]);
 
 
+            //// --- Displaying the result
+            //Console.WriteLine("\n--- Captured Information ---");
+            //Console.WriteLine($"Full Name: {completeName}");
+            //Console.WriteLine($"Bedrooms: {bedrooms}");
+            //Console.WriteLine($"Price: {price}");
+            //Console.WriteLine($"Last Name: {lastName}");
+            //Console.WriteLine($"Age: {age}");
+            //Console.WriteLine($"Height: {height}");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // -------   Learning math operations -------- 
 
             //double a = 1.0, b = -3.0, c = -4.0;
             //double delta = Math.Pow(b, 2) - 4 * a * c;
             //double result1 = (-b - Math.Sqrt(delta)) / (2 * a);
             //Console.WriteLine(delta);
             //Console.WriteLine(result1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }
