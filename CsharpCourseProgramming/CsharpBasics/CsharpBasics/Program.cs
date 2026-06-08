@@ -4,22 +4,36 @@ namespace CsharpBasics {
     internal class Program {
         static void Main(string[] args) {
 
+            // Functions
+
+            Console.WriteLine("Write 3 numbers");
+
+            int num1 = int.Parse( Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = int.Parse(Console.ReadLine());
+
+            int result = greater(num1, num2, num3);
+
+            Console.WriteLine(result);
+
+ 
+
             //  ---------  Conditionals
 
-            Console.WriteLine("what's the time now?");
-            int time = int.Parse(Console.ReadLine());
+            //Console.WriteLine("what's the time now?");
+            //int time = int.Parse(Console.ReadLine());
 
-            if (time <= 12) {
-                Console.WriteLine("good morning");
-            }
+            //if (time <= 12) {
+            //    Console.WriteLine("good morning");
+            //}
 
-            else if (time > 12 && time < 18) {
-                Console.WriteLine("good afternoon");
-            }
+            //else if (time > 12 && time < 18) {
+            //    Console.WriteLine("good afternoon");
+            //}
 
-            else {
-                Console.WriteLine("good night");
-            }
+            //else {
+            //    Console.WriteLine("good night");
+            //}
 
 
 
@@ -99,5 +113,26 @@ namespace CsharpBasics {
 
 
         }
+
+       
+        static int greater(int a, int b, int c) {
+            int greaterNum;
+
+            if(a > b && a > c) {
+                greaterNum = a;
+
+            }
+
+            else if( b > c) {
+                greaterNum = b;
+            }
+
+            else {
+                greaterNum = c;
+            }
+
+            return greaterNum;
+        }
+       
     }
 }
