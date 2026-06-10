@@ -1,6 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+System.Console.WriteLine("Type the number");
+
+int number = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= 8; i += 2)
+{
+    System.Console.WriteLine(i);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+-------Exercise 1 
+
 
 bool isRunning = true;
 
@@ -28,6 +52,11 @@ while (isRunning)
         isRunning = false;
     }
 }
+
+*/
+
+
+// -------Exercise 2 
 
 /*
    bool isRunning = true;
