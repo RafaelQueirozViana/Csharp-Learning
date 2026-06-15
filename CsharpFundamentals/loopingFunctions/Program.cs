@@ -1,13 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-
-System.Console.WriteLine("Type the number");
+﻿
+/*
 
 int number = int.Parse(Console.ReadLine());
 
-for (int i = 1; i <= 8; i += 2)
+for (int i = 1; i <= number; i++)
 {
-    System.Console.WriteLine(i);
+    if (i % 2 != 0)
+    {
+        System.Console.WriteLine(i);
+    }
 }
 
 
@@ -17,13 +18,59 @@ for (int i = 1; i <= 8; i += 2)
 
 
 
+/*
+System.Console.WriteLine("Type your number");
+int choosedNumber = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= 10; i++)
+{
+    System.Console.WriteLine($"{choosedNumber} {i} = {choosedNumber * i}");
+}
+
+*/
+
+// -------Exercise  - Make a triangle with for
+
+/*
+
+System.Console.WriteLine("Type a number");
+int number = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= number; i++)
+{
+
+    for (int j = 1; j <= i; j++)
+    {
+        System.Console.Write("*");
 
 
+    }
+    Console.WriteLine(" ");
+}
+
+*/
+
+/*
+
+
+// -------Exercise  - Show numeros primos
+
+
+System.Console.WriteLine("Type the number");
+
+int number = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= 8; i += 2)
+{
+    System.Console.WriteLine(i);
+
+}
+*/
 
 
 /*
 
--------Exercise 1 
+// -------Exercise - Loop system using while
 
 
 bool isRunning = true;
@@ -56,7 +103,7 @@ while (isRunning)
 */
 
 
-// -------Exercise 2 
+// -------Exercise  - While structure
 
 /*
    bool isRunning = true;
