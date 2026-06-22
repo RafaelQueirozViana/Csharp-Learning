@@ -1,15 +1,27 @@
-﻿
-/*
+﻿using loopingFunctions;
 
-int number = int.Parse(Console.ReadLine());
 
-for (int i = 1; i <= number; i++)
-{
-    if (i % 2 != 0)
-    {
-        System.Console.WriteLine(i);
-    }
-}
+
+Triangle triangle1 = new Triangle();
+Triangle triangle2 = new Triangle();
+
+System.Console.WriteLine("Type all the triangle 1 sizes");
+triangle1.Aside = double.Parse(Console.ReadLine());
+triangle1.Bside = double.Parse(Console.ReadLine());
+triangle1.Cside = double.Parse(Console.ReadLine());
+
+System.Console.WriteLine("Type the triange 2 sizes");
+triangle2.Aside = double.Parse(Console.ReadLine());
+triangle2.Bside = double.Parse(Console.ReadLine());
+triangle2.Cside = double.Parse(Console.ReadLine());
+
+double triangle1Area = triangle1.getArea();
+double triangle2Area = triangle1.getArea();
+
+System.Console.WriteLine(triangle1Area);
+
+
+
 
 
 
