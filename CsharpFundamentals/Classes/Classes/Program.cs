@@ -5,37 +5,88 @@ namespace MyApp {
     internal class Program {
         static void Main(string[] args) {
 
-            //Person Exercise
-            Person person1 = new Person();
-            Person person2 = new Person();
+            Product product1 = new Product();
 
-            Console.WriteLine("Type the first person's name");
-            person1.name = Console.ReadLine();
+            Console.WriteLine("Put your product details");
 
-            Console.WriteLine("Type the first person's age");
-            person1.age = int.Parse(Console.ReadLine());
+            Console.WriteLine("Put the name");
+            product1.name = Console.ReadLine();
 
-            Console.WriteLine("Type the second person's name");
-            person2.name = Console.ReadLine();
+            Console.WriteLine("Put the price");
+            product1.price = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Type the second person's age");
-            person2.age = int.Parse(Console.ReadLine());
+            Console.WriteLine("Put the stock");
+            product1.quantity = int.Parse(Console.ReadLine());
 
-            if (person1.age > person2.age) {
-                Console.WriteLine($"The {person1.name} is the older");
-            }
+          
 
-            else if (person1.age < person2.age) {
-                Console.WriteLine($"The {person2.name} is the older");
-            }
+            Console.WriteLine("type the number of products to being added to stock");
+            product1.increaseProduct(int.Parse(Console.ReadLine()));
 
-            else {
-                Console.WriteLine($"The both {person1.name} and {person2.name} have the same age");
-            }
+          
+
+
+            Console.WriteLine("type the number of products to being removed to stock");
+            product1.decreaseProduct(int.Parse(Console.ReadLine()));
+
+    
 
 
 
+          
 
+
+
+
+
+
+
+
+
+
+
+
+            // ==== Exercise 1 - Worker Exercise
+
+
+
+
+
+
+
+            // ==== Exercise 2 - Person Exercise
+
+
+            //Person person1 = new Person();
+            //Person person2 = new Person();
+
+            //Console.WriteLine("Type the first person's name");
+            //person1.name = Console.ReadLine();
+
+            //Console.WriteLine("Type the first person's age");
+            //person1.age = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Type the second person's name");
+            //person2.name = Console.ReadLine();
+
+            //Console.WriteLine("Type the second person's age");
+            //person2.age = int.Parse(Console.ReadLine());
+
+            //if (person1.age > person2.age) {
+            //    Console.WriteLine($"The {person1.name} is the older");
+            //}
+
+            //else if (person1.age < person2.age) {
+            //    Console.WriteLine($"The {person2.name} is the older");
+            //}
+
+            //else {
+            //    Console.WriteLine($"The both {person1.name} and {person2.name} have the same age");
+            //}
+
+
+
+            // ==== Exercise 3
 
             //string choosedOperation;
             //double number1;

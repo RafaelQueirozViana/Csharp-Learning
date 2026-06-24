@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Classes {
-    //calculator class
-    public class Calculator {
+    internal class Worker {
+        public string name;
+        public double salary;
+
+
+
   
-        public double sumNumbers(double a, double b) {
-            return a + b;
-        }
-      
 
     }
 }
