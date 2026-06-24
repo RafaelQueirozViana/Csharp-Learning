@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace Classes {
     internal class Product {
-        public string name;
-        public double price;
-        public int quantity;
+        public string Name;
+        public double Price;
+        public int Quantity;
 
-        public double getTotalValueOnStock() {
-            return price * quantity;
+        public double GetTotalValueOnStock() {
+            return Price * Quantity;
         }
 
-        public void increaseProduct(int productsQuantity) {
-            quantity+= productsQuantity;
+        public void IncreaseProduct(int productsQuantity) {
+            Quantity += productsQuantity;
         }
 
-        public void decreaseProduct(int productsQuantity) {
-            quantity -= productsQuantity;
+        public void DecreaseProduct(int productsQuantity) {
+            Quantity -= productsQuantity;
         }
 
-        public string getProductDetails() {
-
+        public override string ToString() {
+            return $"{Name}, $ {Price}, {Quantity} units, Total: $ {GetTotalValueOnStock()}, ";
         }
+
+     
 
        
 

@@ -10,30 +10,31 @@ namespace MyApp {
             Console.WriteLine("Put your product details");
 
             Console.WriteLine("Put the name");
-            product1.name = Console.ReadLine();
+            product1.Name = Console.ReadLine();
 
             Console.WriteLine("Put the price");
-            product1.price = double.Parse(Console.ReadLine());
+            product1.Price = double.Parse(Console.ReadLine());
 
             Console.WriteLine("Put the stock");
-            product1.quantity = int.Parse(Console.ReadLine());
+            product1.Quantity = int.Parse(Console.ReadLine());
 
-          
+            Console.WriteLine("Product details: " + product1);
+
 
             Console.WriteLine("type the number of products to being added to stock");
-            product1.increaseProduct(int.Parse(Console.ReadLine()));
+            product1.IncreaseProduct(int.Parse(Console.ReadLine()));
+ 
+           Console.WriteLine("type the number of products to being removed to stock");
+            product1.DecreaseProduct(int.Parse(Console.ReadLine()));
 
-          
-
-
-            Console.WriteLine("type the number of products to being removed to stock");
-            product1.decreaseProduct(int.Parse(Console.ReadLine()));
-
-    
+            Console.WriteLine("Product details: " + product1);
 
 
 
-          
+
+
+
+
 
 
 
