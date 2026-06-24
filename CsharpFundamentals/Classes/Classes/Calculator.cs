@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Classes {
+    //calculator class
     public class Calculator {
   
         public double sumNumbers(double a, double b) {
