@@ -2,34 +2,56 @@
 
 namespace Course {
     public class Product {
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
+        private string _name;
+        private double _price;
+        private int _quantity;
 
 
         public Product(string name, double price) {
-            this.Nome = name;
-            this.Preco = price;
-
-
+            this._name = name;
+            this._price = price;
         }
+
+        public Product(string name, double price, int quantity) {
+            this._name = name;
+            this._price = price;
+            this._quantity = quantity;
+        }
+
+        public string getName() {
+            return this._name;
+        }
+
+        public double getPrice() {
+            return _price;
+        }
+
+        public int getQuantity() {
+            return _quantity;
+        }
+
+        public void setName(string newName) {
+            _name = newName;
+        }
+
+
 
         public double ValorTotalEmEstoque() {
-            return Preco * Quantidade;
+            return _price * _quantity;
         }
         public void AdicionarProdutos(int quantidade) {
-            Quantidade += quantidade;
+            _quantity += quantidade;
         }
         public void RemoverProdutos(int quantidade) {
-            Quantidade -= quantidade;
+            _quantity -= quantidade;
 
         }
         public override string ToString() {
-            return Nome
+            return _name
             + ", $ "
-            + Preco.ToString("F2", CultureInfo.InvariantCulture)
+            + _price.ToString("F2", CultureInfo.InvariantCulture)
             + ", "
-            + Quantidade
+            + _quantity
             + " unidades, Total: $ "
             + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
