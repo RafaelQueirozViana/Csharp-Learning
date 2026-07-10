@@ -19,27 +19,21 @@ namespace Course {
         }
 
         public string Name {
-            get {
-                return _name;
-            }
-            set {
-                if (value != null && value.Length > 1) {
-                    _name = value;
-                }
-            }
-
+            get { return _name; }
+            set { _name = value; }
         }
 
 
         public double Price {
             get { return _price; }
-            set {
-                if (value > 0) {
-                    _price = value;
-                }
-
-            }
+            set { _price = value; }
         }
+
+        public int Quantity {
+            get { return _quantity; }
+            set { _quantity = value; }
+        }
+
 
 
         public double ValorTotalEmEstoque() {
