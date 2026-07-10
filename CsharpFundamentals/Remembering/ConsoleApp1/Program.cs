@@ -4,9 +4,14 @@
 
             Product product1 = new Product("TV", 500.0);
 
+            product1.Name = "d";
 
-            product1.setName("phone");
-            Console.WriteLine(product1.getName());
+            Console.WriteLine(product1.Name);
+
+            product1.Price = 300;
+            Console.WriteLine(product1.Price);
+
+
 
 
 

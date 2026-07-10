@@ -18,22 +18,28 @@ namespace Course {
             this._quantity = quantity;
         }
 
-        public string getName() {
-            return this._name;
+        public string Name {
+            get {
+                return _name;
+            }
+            set {
+                if (value != null && value.Length > 1) {
+                    _name = value;
+                }
+            }
+
         }
 
-        public double getPrice() {
-            return _price;
-        }
 
-        public int getQuantity() {
-            return _quantity;
-        }
+        public double Price {
+            get { return _price; }
+            set {
+                if (value > 0) {
+                    _price = value;
+                }
 
-        public void setName(string newName) {
-            _name = newName;
+            }
         }
-
 
 
         public double ValorTotalEmEstoque() {
