@@ -1,27 +1,40 @@
-﻿
+﻿using Course;
+using System.Globalization;
+
 namespace ConsoleApp1 {
-
     class Program {
-
         static void Main(string[] args) {
 
-            Triangle triangle1 = new Triangle();
-            Triangle triangle2 = new Triangle();
+            Console.WriteLine("Entre os dados do produto:");
+            Console.Write("Nome: ");
+            string name = Console.ReadLine();
 
-            Console.WriteLine("type the triangle 1 sizes");
-            triangle1.sizeA = double.Parse(Console.ReadLine());
-            triangle1.sizeB = double.Parse(Console.ReadLine());
-            triangle1.sizeC = double.Parse(Console.ReadLine());
+            Console.Write("Preço: ");
+            double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.Write("Quantidade no estoque: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            Product p = new Product(name: name, price: price) { Quantidade = 0 };
 
 
-            Console.WriteLine("type the triangle 2 sizes");
-            triangle2.sizeA = double.Parse(Console.ReadLine());
-            triangle2.sizeB = double.Parse(Console.ReadLine());
-            triangle2.sizeC = double.Parse(Console.ReadLine());
-
-            Console.WriteLine(triangle1.GetArea());
-            Console.WriteLine(triangle2.GetArea());
+            Console.WriteLine();
+            Console.WriteLine("Dados do produto: " + p);
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser adicionado ao estoque: ");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProdutos(qte);
+            Console.WriteLine();
+            Console.WriteLine("Dados atualizados: " + p);
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser removido do estoque: ");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProdutos(qte);
+            Console.WriteLine();
+            Console.WriteLine("Dados atualizados: " + p);
 
         }
+
+
     }
 }
