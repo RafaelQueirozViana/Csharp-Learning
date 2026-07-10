@@ -8,15 +8,11 @@ namespace Course {
 
 
         public Product(string name, double price) {
-            Nome = name;
-            Preco = price;
+            this.Nome = name;
+            this.Preco = price;
+
 
         }
-
-
-
-
-
 
         public double ValorTotalEmEstoque() {
             return Preco * Quantidade;

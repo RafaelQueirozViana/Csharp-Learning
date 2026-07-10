@@ -1,7 +1,6 @@
-﻿using Course;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace ConsoleApp1 {
+namespace Course {
     class Program {
         static void Main(string[] args) {
 
@@ -12,11 +11,7 @@ namespace ConsoleApp1 {
             Console.Write("Preço: ");
             double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.Write("Quantidade no estoque: ");
-            int quantity = int.Parse(Console.ReadLine());
-
             Product p = new Product(name: name, price: price) { Quantidade = 0 };
-
 
             Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
