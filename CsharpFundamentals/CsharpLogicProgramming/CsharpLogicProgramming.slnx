@@ -1,8 +1,0 @@
-<Solution>
-  <Folder Name="/Exercises/">
-    <Project Path="../../New folder/highNumberProject/HighNumExercise.csproj" />
-  </Folder>
-  <Project Path="../../New folder/Classes/Classes/Classes.csproj" />
-  <Project Path="../../New folder/loopingFunctions/loopingFunctions.csproj" />
-  <Project Path="../../New folder/Remembering/ConsoleApp1/AdvancedClasses.csproj" />
-</Solution>
