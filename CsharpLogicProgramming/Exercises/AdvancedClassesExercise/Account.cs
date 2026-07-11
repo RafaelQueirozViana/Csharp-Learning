@@ -1,22 +1,32 @@
 ﻿namespace BankAccountExercise {
     internal class Account {
 
-        private int _accountNumber;
-        public string TitularName { get; private set; }
+        private string _titularName;
+        public int AccountNumber { get; private set; }
         public double AccountBalance { get; private set; }
 
         public Account(int accountNumber, string holderName) {
-            _accountNumber = accountNumber;
-            TitularName = holderName;
+            AccountNumber = accountNumber;
+            _titularName = holderName;
 
         }
 
-        public Account(int accountNumber, string holderName, double initialBalance) {
-            _accountNumber = accountNumber;
-            TitularName = holderName;
+        public Account(int accountNumber, string holderName, double initialBalance) : this(accountNumber, holderName) {
             AccountBalance = initialBalance;
-
         }
+
+
+
+        public string TitularName {
+            get { return _titularName; }
+            set {
+                if (value != null && value.Length > 2) {
+                    _titularName = value;
+                }
+            }
+        }
+
+
 
         public void depositToAccount(double money) {
             AccountBalance += money;
@@ -25,17 +35,11 @@
 
 
         public void withdrawToAccount(double money) {
-
-            if (AccountBalance - money >= 0) {
-                AccountBalance -= money;
-
-            }
-
-
+            AccountBalance -= money;
         }
 
         public string getAccountInfo() {
-            return $"Account {_accountNumber}, Titular: {TitularName}, Balance: ${AccountBalance} ";
+            return $"Account {AccountNumber}, Titular: {_titularName}, Balance: ${AccountBalance} ";
         }
 
 

@@ -12,13 +12,12 @@
             string titularName = Console.ReadLine();
 
             Console.WriteLine("Will it have a initial deposit? (y / n)");
-            string initialDeposit = Console.ReadLine();
+            char initialDeposit = char.Parse(Console.ReadLine());
 
-            if (initialDeposit == "y") {
+            if (initialDeposit == 's') {
                 Console.WriteLine("Enter with the initial deposit value");
                 double initialValue = double.Parse(Console.ReadLine());
                 userAccount = new Account(accountNumber, titularName, initialValue);
-
             }
 
             else {
@@ -36,10 +35,9 @@
             Console.WriteLine("Enter a value for saque");
             double saqueValue = double.Parse(Console.ReadLine());
             userAccount.withdrawToAccount(saqueValue);
+
+
             Console.WriteLine(userAccount.getAccountInfo());
-
-
-
 
         }
     }
