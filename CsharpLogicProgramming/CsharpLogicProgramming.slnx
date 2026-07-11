@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Exercises/">
+    <Project Path="Exercises/AdvancedClassesExercise/AdvancedClassesExercise.csproj" Id="706f7b5c-9cb9-48cd-8e08-3cab4b79bc22" />
+  </Folder>
   <Project Path="AdvancedClasses/AdvancedClasses.csproj" />
   <Project Path="Arrays/Arrays.csproj" />
   <Project Path="Classes/Classes.csproj" />
