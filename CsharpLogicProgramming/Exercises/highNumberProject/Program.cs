@@ -1,17 +1,13 @@
-﻿
-using System;
-
-namespace MyApp
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            System.Console.WriteLine("Write 3 numbers in the same line to comapare");
+﻿namespace MyApp {
+    internal class Program {
+        static void Main(string[] args) {
+            System.Console.WriteLine("Write 3 numbers in the same line and with space of each other to comapare");
 
             string[] numbers = Console.ReadLine().Split(" ");
 
+            Console.WriteLine(numbers);
             int number1 = int.Parse(numbers[0]);
+
             int number2 = int.Parse(numbers[1]);
             int number3 = int.Parse(numbers[2]);
 
@@ -22,21 +18,17 @@ namespace MyApp
 
         }
 
-        static int greater(int num1, int num2, int num3)
-        {
+        static int greater(int num1, int num2, int num3) {
             int greaterNumber;
-            if (num1 > num2 && num1 > num2) 
-            {
+            if (num1 > num2 && num1 > num2) {
                 greaterNumber = num1;
             }
 
-            else if(num2 >= num1 && num2 > num3)
-            {
+            else if (num2 >= num1 && num2 > num3) {
                 greaterNumber = num2;
             }
 
-            else
-            {
+            else {
                 greaterNumber = num3;
             }
 
