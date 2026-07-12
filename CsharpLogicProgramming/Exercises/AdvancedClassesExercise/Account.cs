@@ -11,11 +11,9 @@
 
         }
 
-        public Account(int accountNumber, string holderName, double initialBalance) : this(accountNumber, holderName) {
-            AccountBalance = initialBalance;
+        public Account(int accountNumber, string holderName, double initialDeposit) : this(accountNumber, holderName) {
+            depositToAccount(initialDeposit);
         }
-
-
 
         public string TitularName {
             get { return _titularName; }

@@ -2,6 +2,31 @@
     internal class Program {
         static void Main(string[] args) {
 
+
+            Account a = new Account(23, "ss");
+            Account b = a;
+
+            a.depositToAccount(20);
+
+
+            Console.WriteLine(a.AccountBalance);
+            Console.WriteLine(b.AccountBalance);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Account userAccount;
 
 
