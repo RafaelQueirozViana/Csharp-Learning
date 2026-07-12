@@ -7,11 +7,23 @@
         static void Main(string[] args) {
 
 
-            double? x = 13.0;
+            double? a = null;
+            double b = a ?? 20.0;
 
-            double y = x ?? 10.0;
+            if (a.HasValue) {
+                Console.WriteLine($"It has the value {a.Value}");
+                Console.WriteLine(a.GetValueOrDefault());
+            }
 
-            Console.WriteLine(y);
+            else {
+                Console.WriteLine("It doesn't have value");
+            }
+
+            Console.WriteLine(b);
+
+
+
+
 
         }
     }
