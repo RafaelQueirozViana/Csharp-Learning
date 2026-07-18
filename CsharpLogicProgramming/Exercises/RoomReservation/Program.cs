@@ -5,9 +5,6 @@
 
             ClientRegister[] roomsArray = new ClientRegister[totalHotelRooms];
 
-
-
-
             Console.WriteLine("Welcome to our hotel!");
             Console.WriteLine("For how many people do you wanna make a reservation?");
             int reservationsNum = int.Parse(Console.ReadLine());
