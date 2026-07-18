@@ -27,41 +27,29 @@
                 }
 
                 else if (choice == '2') {
+                    if (productsArray != null) {
+                        Console.WriteLine("--------");
+                        Console.WriteLine("Your Products on the cart:");
 
-                    Console.WriteLine("--------");
-                    Console.WriteLine("Your Products on the cart:");
+                        for (int i = 0; i < productsArray.Length; i++) {
+                            Console.WriteLine($"{i + 1}: {productsArray[i].getProductInfo()}");
+                        }
 
-                    for (int i = 0; i < productsArray.Length; i++) {
-                        Console.WriteLine($"{i + 1}: {productsArray[i].getProductInfo()}");
+                        Console.WriteLine($"The average price of these products is: {getAveragePrice(productsArray)}");
+
+                        Console.WriteLine("--------");
+                        Console.WriteLine();
                     }
 
-                    Console.WriteLine("--------");
-                    Console.WriteLine();
-
+                    else {
+                        Console.WriteLine("Your cart is empty, try to buy products.");
+                    }
                 }
 
                 else {
                     wannaContinue = false;
                 }
-
-
-
-
             }
-
-
-
-
-
-
-
-
-
-            //Console.WriteLine("Do you wanna see your products cart? (y/n) ");
-            //char seeCart = char.Parse(Console.ReadLine());
-
-
-
         }
 
         static char getChoice() {
@@ -89,8 +77,16 @@
 
         }
 
+        static double getAveragePrice(Product[] array) {
+            double sum = 0;
+            for (int i = 0; i < array.Length; i++) {
+                sum += array[i].Price;
+            }
+
+            Console.WriteLine($"Sum: {sum}");
+
+            return sum / array.Length;
+        }
 
     }
-
-
 }
