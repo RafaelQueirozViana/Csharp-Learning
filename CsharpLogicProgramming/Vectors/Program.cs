@@ -2,17 +2,35 @@
     internal class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("Type how many people to see the height");
-            int totalPeople = int.Parse(Console.ReadLine());
+            Console.WriteLine("How many products do you wanna buy");
+            int totalProducts = int.Parse(Console.ReadLine());
 
-            double[] heightVector = new double[totalPeople];
+            Product[] productsArray = new Product[totalProducts];
 
-            for (int i = 0; i < heightVector.Length; i++) {
-                Console.WriteLine($"type the height of the person {i + 1}");
-                heightVector[i] = double.Parse(Console.ReadLine());
+            for (int i = 0; i < productsArray.Length; i++) {
+                Console.WriteLine("Type the product name");
+                string productName = Console.ReadLine();
+                Console.WriteLine("Type the product price");
+                double productPrice = double.Parse(Console.ReadLine());
+
+                productsArray[i] = new Product(productName, productPrice);
             }
-            Console.WriteLine("The average between these people is:");
-            Console.WriteLine(heightVector.Average());
+
+            Console.WriteLine("--------");
+            Console.WriteLine("Your Products on the cart:");
+
+            for (int i = 0; i < productsArray.Length; i++) {
+                Console.WriteLine($"{i + 1}: {productsArray[i].getProductInfo()}");
+            }
+
+
+
+
+
+            //Console.WriteLine("Do you wanna see your products cart? (y/n) ");
+            //char seeCart = char.Parse(Console.ReadLine());
+
+
 
         }
     }
