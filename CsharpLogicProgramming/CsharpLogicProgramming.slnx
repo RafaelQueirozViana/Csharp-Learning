@@ -2,6 +2,7 @@
   <Folder Name="/Exercises/">
     <Project Path="Exercises/AdvancedClassesExercise/BankAccountExercise.csproj" Id="706f7b5c-9cb9-48cd-8e08-3cab4b79bc22" />
     <Project Path="Exercises/highNumberProject/HighNumExercise.csproj" />
+    <Project Path="Exercises/RoomReservation/RoomReservation.csproj" Id="f7d1d989-c2a4-4198-9ea3-5f7993b365f7" />
   </Folder>
   <Project Path="AdvancedClasses/AdvancedClasses.csproj" />
   <Project Path="Classes/Classes.csproj" />
