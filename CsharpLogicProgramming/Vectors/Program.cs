@@ -2,26 +2,56 @@
     internal class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("How many products do you wanna buy");
-            int totalProducts = int.Parse(Console.ReadLine());
+            bool wannaContinue = true;
+            Product[] productsArray = null;
 
-            Product[] productsArray = new Product[totalProducts];
+            while (wannaContinue) {
 
-            for (int i = 0; i < productsArray.Length; i++) {
-                Console.WriteLine("Type the product name");
-                string productName = Console.ReadLine();
-                Console.WriteLine("Type the product price");
-                double productPrice = double.Parse(Console.ReadLine());
+                char choice = getChoice();
 
-                productsArray[i] = new Product(productName, productPrice);
+                if (choice == '1') {
+
+                    if (productsArray == null) {
+                        Console.WriteLine("How many products do you wanna buy");
+                        int totalProducts = int.Parse(Console.ReadLine());
+
+                        productsArray = new Product[totalProducts];
+
+                        addProductsToArray(productsArray);
+                    }
+
+                    else {
+                        Console.WriteLine("You can't buy new products again.");
+                    }
+
+                }
+
+                else if (choice == '2') {
+
+                    Console.WriteLine("--------");
+                    Console.WriteLine("Your Products on the cart:");
+
+                    for (int i = 0; i < productsArray.Length; i++) {
+                        Console.WriteLine($"{i + 1}: {productsArray[i].getProductInfo()}");
+                    }
+
+                    Console.WriteLine("--------");
+                    Console.WriteLine();
+
+                }
+
+                else {
+                    wannaContinue = false;
+                }
+
+
+
+
             }
 
-            Console.WriteLine("--------");
-            Console.WriteLine("Your Products on the cart:");
 
-            for (int i = 0; i < productsArray.Length; i++) {
-                Console.WriteLine($"{i + 1}: {productsArray[i].getProductInfo()}");
-            }
+
+
 
 
 
@@ -33,6 +63,33 @@
 
 
         }
+
+        static char getChoice() {
+            Console.WriteLine("What do you wanna do?");
+
+            Console.WriteLine("[1] - Buy Products");
+            Console.WriteLine("[2] - See the Cart");
+            Console.WriteLine("[3] - Close Program");
+            char choice = char.Parse(Console.ReadLine());
+
+            return choice;
+        }
+
+        static void addProductsToArray(Product[] array) {
+
+            for (int i = 0; i < array.Length; i++) {
+                Console.WriteLine("Type the product name");
+                string productName = Console.ReadLine();
+                Console.WriteLine("Type the product price");
+                double productPrice = double.Parse(Console.ReadLine());
+
+                array[i] = new Product(productName, productPrice);
+            }
+
+
+        }
+
+
     }
 
 
