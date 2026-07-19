@@ -7,5 +7,6 @@
   <Project Path="AdvancedClasses/AdvancedClasses.csproj" />
   <Project Path="Classes/Classes.csproj" />
   <Project Path="MemoryBehavior/MemoryBehavior.csproj" Id="af5d5645-4814-46a2-9b5c-d1b4c7ecf734" />
+  <Project Path="ParamsModifier/ParamsModifier.csproj" Id="fb40775f-ad4d-494e-b806-d10f118e52e1" />
   <Project Path="Vectors/Vectors.csproj" Id="4909d0f4-2e12-477e-8d04-48590daceb91" />
 </Solution>
