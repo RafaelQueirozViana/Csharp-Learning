@@ -14,8 +14,9 @@
 
         // Ref 
 
-        public static void Triple(ref int number) {
-            number *= 3;
+        public static void Triple(int number, out int resultVar) {
+            resultVar = number * 3;
+
         }
 
 

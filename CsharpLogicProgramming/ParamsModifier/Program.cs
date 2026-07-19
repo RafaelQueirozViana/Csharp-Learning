@@ -13,12 +13,22 @@
 
             // Learning ref
 
+            //int a = 10;
+
+            //Calculator.Triple(ref a);
+
+            //Console.WriteLine(a);
+
+
+            // Learning Out
+
             int a = 10;
+            int result;
 
-            Calculator.Triple(ref a);
+            Calculator.Triple(a, out result);
 
-            Console.WriteLine(a);
 
+            Console.WriteLine(result);
 
 
 
