@@ -39,7 +39,6 @@
 
                     string result = makeReservation(roomsArray, new ClientRegister(name, email, age), choosedRoom);
 
-                    Console.WriteLine(roomsArray[2]);
 
                     if (result != "") {
                         verifyError = true;

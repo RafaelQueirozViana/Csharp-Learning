@@ -12,5 +12,13 @@
             return sum;
         }
 
+        // Ref 
+
+        public static void Triple(ref int number) {
+            number *= 3;
+        }
+
+
+
     }
 }
