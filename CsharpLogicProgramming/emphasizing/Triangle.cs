@@ -1,19 +1,26 @@
 public class Triangle {
 
-    public double sideA { get; private set; }
-    public double sideB { get; private set; }
-    public double sideC { get; private set; }
+    public double SideA { get; private set; }
+    public double SideB { get; private set; }
+    public double SideC { get; private set; }
 
 
     public Triangle(double a, double b, double c) {
-        sideA = a;
-        sideB = b;
-        sideC = c;
+        SideA = a;
+        SideB = b;
+        SideC = c;
     }
 
-    public string getInfo() {
-        return $"A: {sideA} B: {sideB} C: {sideC}";
+    public double getArea() {
+        double area = (SideA + SideB + SideC) / 2.0;
+
+        return area;
+
+
     }
+
+
+
 
 
 
