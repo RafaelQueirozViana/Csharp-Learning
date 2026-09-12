@@ -150,86 +150,115 @@
 
             // 5 ---------- Products management menu ----------
 
-            List<Product> productsList = [];
-
-            bool continueMenu = true;
-
-            while (continueMenu == true) {
-                System.Console.WriteLine("----- Stock Control Menu -----");
-                System.Console.WriteLine("What do you wanna do:");
-                System.Console.WriteLine("1 - See all products on stock");
-                System.Console.WriteLine("2 - Register a new product");
-                System.Console.WriteLine("3 - Remove a product from stock");
-                System.Console.WriteLine("4 - Exit the program");
+            /*     List<Product> productsList = [];
 
 
+                bool continueMenu = true;
 
-                char action = char.Parse(Console.ReadLine());
-
-                if (action == '1') {
-                    ShowProductsList(StockService.GetProductsList());
-                }
-
-                else if (action == '2') {
-
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("");
+                while (continueMenu == true) {
+                    System.Console.WriteLine("----- Stock Control Menu -----");
+                    System.Console.WriteLine("What do you wanna do:");
+                    System.Console.WriteLine("1 - See all products on stock");
+                    System.Console.WriteLine("2 - Register a new product");
+                    System.Console.WriteLine("3 - Remove a product from stock");
+                    System.Console.WriteLine("4 - Exit the program");
 
 
-                    System.Console.WriteLine("How many products do you wanna add?");
-                    int productsToAdd = int.Parse(Console.ReadLine());
 
-                    for (int i = 1; i <= productsToAdd; i++) {
-                        string productName;
-                        double productPrice;
-                        int productQuantity;
-                        int productId;
+                    char action = char.Parse(Console.ReadLine());
 
+                    if (action == '1') {
+                        ShowProductsList(StockService.ProductsList);
+                    }
 
-                        System.Console.WriteLine("Type the product id");
-                        productId = int.Parse(Console.ReadLine());
-
-
-                        System.Console.WriteLine("Type the product name");
-                        productName = Console.ReadLine();
-
-                        System.Console.WriteLine("Type the product price");
-                        productPrice = double.Parse(Console.ReadLine());
-
-                        System.Console.WriteLine("Type the product quantity");
-                        productQuantity = int.Parse(Console.ReadLine());
-
-                        Product productToCreate = new Product(productId, productName, productPrice, productQuantity);
-
-                        StockService.AddProduct(productToCreate);
+                    else if (action == '2') {
 
                         System.Console.WriteLine("");
                         System.Console.WriteLine("");
+
+
+                        System.Console.WriteLine("How many products do you wanna add?");
+                        int productsToAdd = int.Parse(Console.ReadLine());
+
+                        for (int i = 1; i <= productsToAdd; i++) {
+                            string productName;
+                            double productPrice;
+                            int productQuantity;
+                            int productId;
+
+
+                            System.Console.WriteLine("Type the product id");
+                            productId = int.Parse(Console.ReadLine());
+
+
+                            System.Console.WriteLine("Type the product name");
+                            productName = Console.ReadLine();
+
+                            System.Console.WriteLine("Type the product price");
+                            productPrice = double.Parse(Console.ReadLine());
+
+                            System.Console.WriteLine("Type the product quantity");
+                            productQuantity = int.Parse(Console.ReadLine());
+
+                            Product productToCreate = new Product(productId, productName, productPrice, productQuantity);
+
+                            StockService.AddProduct(productToCreate);
+
+                            System.Console.WriteLine("");
+                            System.Console.WriteLine("");
+
+
+
+
+
+                        }
 
                     }
 
-                }
+                    else if (action == '3') {
+                        System.Console.WriteLine("Type the product id of the product you wanna remove from stock");
+                        int idToRemove = int.Parse(Console.ReadLine());
 
-                else if (action == '3') {
-                    System.Console.WriteLine("Type the product id of the product you wanna remove from stock");
-                    int idToRemove = int.Parse(Console.ReadLine());
+                        string logMessage = StockService.RemoveProduct(idToRemove);
 
-                    string logMessage = StockService.RemoveProduct(idToRemove);
+                        System.Console.WriteLine("");
+                        System.Console.WriteLine("");
 
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("");
+                        System.Console.WriteLine(logMessage);
 
-                    System.Console.WriteLine(logMessage);
+                        System.Console.WriteLine("");
+                        System.Console.WriteLine("");
+                    }
 
-                    System.Console.WriteLine("");
-                    System.Console.WriteLine("");
-                }
+                    else {
+                        System.Console.WriteLine("The program will end.");
+                        continueMenu = false;
+                    }
+                } */
 
-                else {
-                    System.Console.WriteLine("The program will end.");
-                    continueMenu = false;
-                }
+            // 5 ---------- Vectors, Lists and Params----------
+            System.Console.WriteLine("Type how many heights do you wanna add");
+            int n = int.Parse(Console.ReadLine());
+
+            double[] heightsVector = new double[n];
+
+            for (int i = 0; i < n; i++) {
+                System.Console.WriteLine($"Type the height {i}: ");
+                double choosedHeight = double.Parse(Console.ReadLine());
+                heightsVector[i] = choosedHeight;
             }
+
+            System.Console.WriteLine(heightsVector.Average());
+
+
+
+
+
+
+
+
+
+
 
 
         }
@@ -257,30 +286,34 @@
 
           } */
 
-        static void ShowProductsList(List<Product> productsList) {
+        /*     static void ShowProductsList(List<Product> productsList)
+            {
 
-            System.Console.WriteLine("");
-            System.Console.WriteLine("");
+                System.Console.WriteLine("");
+                System.Console.WriteLine("");
 
-            if (productsList.Count > 0) {
-                productsList.ForEach((product) => {
-                    System.Console.WriteLine($"- Product id: {product.Id}, name: {product.ProductName}, quant: s{product.Quantity}, Price: ${product.Price}");
-                });
+                if (productsList.Count > 0)
+                {
+                    productsList.ForEach((product) =>
+                    {
+                        System.Console.WriteLine($"- Product id: {product.Id}, name: {product.ProductName}, quant: s{product.Quantity}, Price: ${product.Price}");
+                    });
+                }
+
+                else
+                {
+                    System.Console.WriteLine("There isn't any product on stock yet");
+                }
+
+                System.Console.WriteLine("");
+                System.Console.WriteLine("");
+
+
+
+
+
             }
-
-            else {
-                System.Console.WriteLine("There isn't any product on stock yet");
-            }
-
-            System.Console.WriteLine("");
-            System.Console.WriteLine("");
-
-
-
-
-
-        }
-
+     */
 
 
     }

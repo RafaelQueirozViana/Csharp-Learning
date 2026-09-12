@@ -1,6 +1,6 @@
 public class StockService {
 
-    public static List<Product> ProductsList { get; set; } = new List<Product>();
+    public static List<Product> ProductsList { get; private set; } = new List<Product>();
 
     public static void AddProduct(Product product) {
         System.Console.WriteLine($"receveing this product: {product.ProductName}");
@@ -32,9 +32,6 @@ public class StockService {
 
     }
 
-    public static List<Product> GetProductsList() {
-        return ProductsList;
-    }
 
 
 
