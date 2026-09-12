@@ -236,20 +236,31 @@
                     }
                 } */
 
-            // 5 ---------- Vectors, Lists and Params----------
-            System.Console.WriteLine("Type how many heights do you wanna add");
-            int n = int.Parse(Console.ReadLine());
+            // 5 ---------- Vectors - Height average program ---------
 
-            double[] heightsVector = new double[n];
+            /*  System.Console.WriteLine("Type how many heights do you wanna add");
+             int n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < n; i++) {
-                System.Console.WriteLine($"Type the height {i}: ");
-                double choosedHeight = double.Parse(Console.ReadLine());
-                heightsVector[i] = choosedHeight;
+             double[] heightsVector = new double[n];
+
+             for (int i = 0; i < n; i++) {
+                 System.Console.WriteLine($"Type the height {i}: ");
+                 double choosedHeight = double.Parse(Console.ReadLine());
+                 heightsVector[i] = choosedHeight;
+             }
+
+             System.Console.WriteLine(heightsVector.Average());
+  */
+
+            // 6 ---------- Efficient Calculator using Params ---------
+
+            int[] numbers = new int[2] { 2222, 333 };
+
+            System.Console.WriteLine(Calculator.Sum(2.5, 2.5, 4));
+
+            foreach (int currentNum in numbers) {
+                System.Console.WriteLine(currentNum);
             }
-
-            System.Console.WriteLine(heightsVector.Average());
-
 
 
 
