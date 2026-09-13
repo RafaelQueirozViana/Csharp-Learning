@@ -254,13 +254,60 @@
 
             // 6 ---------- Efficient Calculator using Params ---------
 
-            int[] numbers = new int[2] { 2222, 333 };
+            /*    int[] numbers = new int[2] { 2222, 333 };
 
-            System.Console.WriteLine(Calculator.Sum(2.5, 2.5, 4));
+               System.Console.WriteLine(Calculator.Sum(2.5, 2.5, 4)); */
 
-            foreach (int currentNum in numbers) {
-                System.Console.WriteLine(currentNum);
+
+
+            // 7 ---------- Learning List Methods ---------
+
+            // Declaring the users list, adding a new user and showing its size
+            List<string> users = ["pedro", "jonathan", "pamela", "paulo"];
+            users.Add("Mateus");
+            System.Console.WriteLine(users.Count());
+
+            // Finding the pedro name on the list and printing the first character
+            string pedroName = (users.Find(name => name == "pedro"));
+            System.Console.WriteLine(pedroName[0]);
+
+            // Creating a new List containing the users filtered by a condition
+            List<string> filteredNames = users.FindAll(name => name[0] == 'p');
+            foreach (string name in filteredNames) {
+                System.Console.WriteLine(name);
             }
+
+            // Finding the user index by a condition
+
+            int index = users.FindIndex(user => user.Length == 5);
+            System.Console.WriteLine(index);
+
+            // Removing a value from the list specifying the exactly string to remove
+            users.Remove("jonathan");
+
+            // Remove all values that correspond to the condition:
+            users.RemoveAll(user => user.Length >= 6);
+
+            // Removing a value by the index:
+
+            //First, getting the index:
+            int indexToRemove = users.FindIndex(user => user == "pedro");
+            // And then, we can remove the user
+
+            users.RemoveAt(indexToRemove);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
