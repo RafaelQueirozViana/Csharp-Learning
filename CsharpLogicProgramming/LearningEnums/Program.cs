@@ -6,11 +6,6 @@
 
             System.Console.WriteLine(firstOrder.Status);
 
-
-
-
-
-
         }
     }
 }
