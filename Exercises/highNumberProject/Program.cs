@@ -1,4 +1,4 @@
-﻿namespace MyApp {
+﻿namespace highNumberProject {
     internal class Program {
         static void Main(string[] args) {
             System.Console.WriteLine("Write 3 numbers in the same line and with space of each other to comapare");

@@ -24,8 +24,6 @@
             }
         }
 
-
-
         public void depositToAccount(double money) {
             AccountBalance += money;
 
@@ -39,9 +37,5 @@
         public string getAccountInfo() {
             return $"Account {AccountNumber}, Titular: {_titularName}, Balance: ${AccountBalance} ";
         }
-
-
-
-
     }
 }

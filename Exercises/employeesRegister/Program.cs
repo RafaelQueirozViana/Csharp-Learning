@@ -1,6 +1,6 @@
 ﻿
 
-namespace CsharpLogicProgramming {
+namespace employeesRegister {
     class Program {
         static void Main(string[] args) {
             System.Console.WriteLine("How many employees will be registered?");

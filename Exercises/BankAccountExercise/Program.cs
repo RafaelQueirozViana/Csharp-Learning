@@ -7,26 +7,9 @@
             Account b = a;
 
             a.depositToAccount(20);
-
-
+            
             Console.WriteLine(a.AccountBalance);
             Console.WriteLine(b.AccountBalance);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             Account userAccount;
 
 
