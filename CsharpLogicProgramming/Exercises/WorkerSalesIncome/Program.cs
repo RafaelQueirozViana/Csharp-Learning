@@ -1,34 +1,26 @@
 ﻿namespace WorkerSalesIncome {
     internal class Program {
         static void Main(string[] args) {
-            string departmentName;
-            string workerName;
-            string workerLevel;
-            double baseSalary;
-            int totalContracts;
-
-            Worker employee;
 
             System.Console.WriteLine("Enter department's name:");
-            departmentName = Console.ReadLine();
+            string departmentName = Console.ReadLine();
 
             System.Console.WriteLine("Enter worker data:");
 
             System.Console.Write("Name: ");
-            workerName = Console.ReadLine();
+            string workerName = Console.ReadLine();
 
             System.Console.Write("Level (Junior/MidLevel/Senior): ");
-            workerLevel = Console.ReadLine();
+            WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
 
             System.Console.Write("Base Salary: ");
-            baseSalary = double.Parse(Console.ReadLine());
+            double baseSalary = double.Parse(Console.ReadLine());
 
-            employee = new Worker(departmentName, workerName, workerLevel, baseSalary);
-
-
+            Department Dept = new Department(departmentName);
+            Worker worker = new Worker(Dept, workerName, level, baseSalary);
 
             System.Console.Write("How many contracts to this worker?");
-            totalContracts = int.Parse(Console.ReadLine());
+            int totalContracts = int.Parse(Console.ReadLine());
 
             for (int i = 1; i <= totalContracts; i++) {
                 System.Console.WriteLine($"Enter #${i} contract's data");
@@ -41,10 +33,7 @@
 
                 Contract newContract = new Contract(contractDate, valuePerHour, duration);
 
-                employee.AddContract(newContract);
-
-
-
+                worker.AddContract(newContract);
             }
 
 
@@ -56,29 +45,11 @@
                 null
             );
 
-
-            string[] resultInfo = employee.CalculateIncome(dateToSearch);
+            string[] resultInfo = worker.getIncome(dateToSearch);
 
             System.Console.WriteLine($"name: {resultInfo[0]}");
             System.Console.WriteLine($"Department: {resultInfo[1]}");
             System.Console.WriteLine($"Income for {dateToSearch}: {resultInfo[2]}");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

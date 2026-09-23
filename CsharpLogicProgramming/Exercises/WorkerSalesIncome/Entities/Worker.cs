@@ -1,37 +1,37 @@
 public class Worker {
 
-    public string Department { get; private set; }
+    public Department Department { get; private set; }
     public string Name { get; private set; }
-    public string Level { get; private set; }
+    public WorkerLevel Level { get; private set; }
     public double BaseSalary { get; private set; }
-    private List<Contract> _contractsList = [];
+    private List<Contract> ContractsList { get; set; } = [];
 
-    public Worker(string department, string name, string level, double baseSalary) {
+    public Worker(Department department, string name, WorkerLevel level, double baseSalary) {
         Department = department;
         Name = name;
         Level = level;
         BaseSalary = baseSalary;
     }
 
-    public string[] CalculateIncome(DateTime searchDate) {
-
-        List<Contract>? foundContractList = _contractsList.FindAll(contract =>
-        contract.ContractDate.Month == searchDate.Month &&
-        contract.ContractDate.Year == searchDate.Year);
-
+    public string[] getIncome(DateTime searchDate) {
         double contractsSum = 0;
 
-        foreach (Contract currentContract in foundContractList) {
-            contractsSum += currentContract.ValuePerHour * currentContract.Duration;
+        foreach (Contract currentContract in ContractsList) {
+            if(currentContract.Date.Month == searchDate.Month && currentContract.Date.Year == currentContract.Date.Year)
+            contractsSum += currentContract.totalValue();
         }
 
         double incomeMoney = BaseSalary + contractsSum;
 
 
-        return [Name, Department, "$" + incomeMoney.ToString()]
+        return [Name, Department.DepartmentName, "$" + incomeMoney.ToString()]
         ;
     }
-    public void AddContract(Contract contractObj) {
-        _contractsList.Add(contractObj);
+    public void AddContract(Contract contract) {
+        ContractsList.Add(contract);
+    }
+
+    public void RemoveContract(Contract contract) {
+        ContractsList.Remove(contract);
     }
 }
