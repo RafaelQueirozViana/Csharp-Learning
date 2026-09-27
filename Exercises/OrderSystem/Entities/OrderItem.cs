@@ -5,6 +5,8 @@ public class OrderItem
     public Product Product;
     public double Price { get; private set; }
 
+
+
     public OrderItem(int id, int quantity, Product product)
     {
         Id = id;
@@ -18,6 +20,11 @@ public class OrderItem
         Price = Product.Price * Quantity;
 
         return Price;
+    }
+
+    public string GetOrderInfo()
+    {
+        return $"{Id},{Product.Name}, Quantity: {Quantity}, SubTotal: ${SubTotal()}";
     }
 
 
