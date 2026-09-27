@@ -11,20 +11,6 @@ public class Client
         BirthDate = BirthDate;
     }
 
-    public bool IsAdult()
-    {
-        bool isAdult;
-        if (DateTime.Now.Year - BirthDate.Year >= 18)
-        {
-            isAdult = true;
-        }
 
-        else
-        {
-            isAdult = false;
-        }
-
-        return isAdult;
-    }
 
 }

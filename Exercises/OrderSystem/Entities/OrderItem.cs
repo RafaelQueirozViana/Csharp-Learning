@@ -24,7 +24,7 @@ public class OrderItem
 
     public string GetOrderInfo()
     {
-        return $"{Id},{Product.Name}, Quantity: {Quantity}, SubTotal: ${SubTotal()}";
+        return $"Id: {Id}, Product: {Product.Name}, Quantity: {Quantity}, SubTotal: ${SubTotal()}";
     }
 
 
