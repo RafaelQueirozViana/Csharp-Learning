@@ -1,25 +1,21 @@
 public class Account {
-    public int Number { get; private set; }
-    public string Holder { get; private set; }
+    public int Number { get; protected set; }
+    public string Holder { get; protected set; }
+
     public double Balance { get; protected set; }
 
-    public Account(int number, string holder, double balance) {
+    public Account(int number, string holder, double initialBalance) {
         Number = number;
         Holder = holder;
-        Balance = balance;
+        Balance = initialBalance;
     }
 
-    public void WithDraw(double amount) {
-        Balance -= amount;
+    public virtual void WithDraw(double amount) {
+        Balance -= amount + 5.0;
     }
 
     public void Deposit(double amount) {
         Balance += amount;
     }
 
-    public string ShowInfo() {
-        return $"Account {Number}, holder: {Holder}, Balance: ${Balance}";
-    }
-
 }
-
