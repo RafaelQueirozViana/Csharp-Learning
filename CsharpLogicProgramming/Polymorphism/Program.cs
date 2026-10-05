@@ -29,21 +29,17 @@
                 System.Console.Write("Value/Hour: $");
                 double valuePerHour = double.Parse(Console.ReadLine());
 
-                Employee employee;
+
 
                 if (IsOutsourced == 'y') {
                     System.Console.Write("Additional charge: ");
                     double additionalCharge = double.Parse(Console.ReadLine());
-                    employee = new OutsourcedEmployee(name, workedHours, valuePerHour, additionalCharge);
+                    EmployeeService.AddEmployee(new OutsourcedEmployee(name, workedHours, valuePerHour, additionalCharge));
                 }
 
                 else {
-                    employee = new Employee(name, workedHours, valuePerHour);
+                    EmployeeService.AddEmployee(new Employee(name, workedHours, valuePerHour));
                 }
-
-                EmployeeService.AddEmployee(employee);
-
-
             }
 
             foreach (Employee employee in EmployeeService.Employees) {
