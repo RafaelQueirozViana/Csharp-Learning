@@ -71,7 +71,7 @@
             System.Console.WriteLine("");
             System.Console.WriteLine(" ====== Order Summary ======");
 
-            System.Console.WriteLine($"Order moment: {order.Moment.ToString("yyyy-MM-dd")}");
+            System.Console.WriteLine($"Order moment: {order.Moment}");
             System.Console.WriteLine($"Order status: {order.OrderStatus}");
             System.Console.WriteLine($"Client: {order.OrderClient.Name}, ({order.OrderClient.BirthDate.ToString("yyyy-MM-dd")}) - {order.OrderClient.Email}");
             System.Console.WriteLine("Order Items:");

@@ -3,9 +3,7 @@ public class Order
     public DateTime Moment { get; private set; }
     public Status OrderStatus { get; private set; }
     public List<OrderItem> ProductsList { get; private set; } = [];
-
     public Client OrderClient { get; private set; }
-
     public Order(Client client)
     {
         OrderStatus = Status.PendingPayment;

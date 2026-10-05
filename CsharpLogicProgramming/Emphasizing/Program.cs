@@ -1,4 +1,4 @@
-﻿namespace CsharpLogicProgramming {
+﻿namespace Emphasizing {
     class Program {
         static void Main(string[] args) {
             // 1 -------------- Variables Types: ----------------
