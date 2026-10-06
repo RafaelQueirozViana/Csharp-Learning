@@ -26,7 +26,6 @@ namespace TaxPayers
                     System.Console.Write("type the healthcare expenses: $");
                     double healthCosts = double.Parse(Console.ReadLine());
                     PersonService.AddPerson(new NaturalPerson(name, annualIncome, healthCosts));
-
                 }
 
                 else if (personType == 'l')
