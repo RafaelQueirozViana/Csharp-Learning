@@ -1,89 +1,72 @@
-﻿namespace RoomReservation {
-    internal class Program {
-        static void Main(string[] args) {
-            int totalHotelRooms = 10;
+﻿using RoomReservation.Entities;
 
-            ClientRegister[] roomsArray = new ClientRegister[totalHotelRooms];
+namespace RoomReservation
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            System.Console.WriteLine("=== Create a reservation ===");
 
-            Console.WriteLine("Welcome to our hotel!");
-            Console.WriteLine("For how many people do you wanna make a reservation?");
-            int reservationsNum = int.Parse(Console.ReadLine());
+            System.Console.Write("Type the room: ");
+            int room = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= reservationsNum; i++) {
+            System.Console.Write("Checkin date: ");
+            DateTime checkin = DateTime.Parse(Console.ReadLine());
 
-                bool verifyError = true;
+            System.Console.Write("Checkout date: ");
+            DateTime checkout = DateTime.Parse(Console.ReadLine());
 
-                while (verifyError == true) {
-                    verifyError = false;
+            if (checkout <= checkin)
+            {
+                System.Console.WriteLine("Error: the checkout can't be earlier than the checkin date");
+            }
 
-                    Console.WriteLine("-----------");
-                    Console.WriteLine($"Person {i} reservation");
+            else
+            {
+                Reservation reservation = new Reservation(room, checkin, checkout);
+                System.Console.WriteLine(reservation.GetReservationInfo());
 
-                    Console.WriteLine($"Make the register:");
+                System.Console.WriteLine("=== Update your reservation date ===");
+                System.Console.WriteLine("");
 
-                    Console.WriteLine("Provide the name:");
-                    string name = Console.ReadLine();
+                System.Console.Write("New checkin:");
+                checkin = DateTime.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Provide the email:");
-                    string email = Console.ReadLine();
-
-                    Console.WriteLine("Provide the age:");
-                    int age = int.Parse(Console.ReadLine());
-
-                    Console.WriteLine($"These are the available rooms:");
-                    showAvailableRooms(roomsArray);
-
-
-                    Console.WriteLine($"Choose the room:");
-                    int choosedRoom = int.Parse(Console.ReadLine());
-
-                    string result = makeReservation(roomsArray, new ClientRegister(name, email, age), choosedRoom);
+                System.Console.Write("New checkout:");
+                checkout = DateTime.Parse(Console.ReadLine());
 
 
-                    if (result != "") {
-                        verifyError = true;
-                        Console.WriteLine(result);
-                    }
+                DateTime now = DateTime.Now;
 
-                    else {
-                        Console.WriteLine($"The reservation for {name} was sucessfull made in the room {choosedRoom}");
-                    }
+                if (checkin < now || checkout < now)
+                {
+                    System.Console.WriteLine("Error: the new date can't be before today");
                 }
-            }
 
-        }
-
-        static void showAvailableRooms(ClientRegister[] array) {
-            for (int i = 0; i < array.Length; i++) {
-                if (array[i] == null) {
-                    Console.Write($"{i}; ");
-
+                else
+                {
+                    reservation.UpdateDates(checkin, checkout);
+                    System.Console.WriteLine(reservation.GetReservationInfo());
                 }
+
+
+
             }
 
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-        }
 
 
-        static string makeReservation(ClientRegister[] array, ClientRegister clientData, int choosedRoom) {
-            string statusMessage = "";
 
-            if (!(choosedRoom >= 0 && choosedRoom <= 10)) {
-                statusMessage = "Enter a valid number";
-            }
 
-            else if (array[choosedRoom] != null) {
-                statusMessage = "The choosed room is already reserved";
-            }
 
-            else {
-                array[choosedRoom] = clientData;
-            }
 
-            return statusMessage;
+
+
+
+
         }
 
     }
 }
+
+
