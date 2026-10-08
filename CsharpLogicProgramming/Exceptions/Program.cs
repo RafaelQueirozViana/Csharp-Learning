@@ -2,24 +2,27 @@
 namespace Exceptions {
     internal class Program {
         static void Main(string[] args) {
+            List<int> rgList = [222, 333, 444];
+
+            System.Console.WriteLine("Party System");
+
+            System.Console.Write("Type your name: ");
+            string name = Console.ReadLine();
+
+            System.Console.Write("Type your age: ");
+            int age = int.Parse(Console.ReadLine());
+
+            System.Console.Write("Type your RG: ");
+            int rg = int.Parse(Console.ReadLine());
 
             try {
+                Person person = new Person(name, age, rg);
 
-                int n1 = int.Parse(Console.ReadLine());
-                int n2 = int.Parse(Console.ReadLine());
-
-                System.Console.WriteLine(n1 / n2);
+                System.Console.WriteLine(person.CheckEntry(rgList));
             }
-
-            catch (DivideByZeroException e) {
-                System.Console.WriteLine("divide by zero error: " + e.Message);
+            catch (DomainException e) {
+                System.Console.WriteLine("Error: " + e.Message);
             }
-
-            catch (FormatException e) {
-                System.Console.WriteLine("Format error: " + e.Message);
-            }
-
-
 
 
 

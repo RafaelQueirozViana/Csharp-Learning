@@ -3,6 +3,8 @@ using System.Drawing;
 
 namespace AbstractClasses {
     internal class Program {
+
+
         static void Main(string[] args) {
 
             System.Console.WriteLine("Enter the number of shapes:");
@@ -35,6 +37,8 @@ namespace AbstractClasses {
                     double height = double.Parse(Console.ReadLine());
                     ShapeService.AddShape(new Rectangle(color, width, height));
                 }
+
+
 
                 else {
                     System.Console.WriteLine("Error, invalid option choosed");

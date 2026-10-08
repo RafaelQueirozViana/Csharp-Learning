@@ -20,6 +20,18 @@ namespace RoomReservation.Entities
 
         public void UpdateDates(DateTime newCheckin, DateTime newCheckout)
         {
+            DateTime now = DateTime.Now;
+
+            if (newCheckin < now || newCheckout < now)
+            {
+                throw new DomainException("Error, the new date can't be before today");
+            }
+
+            if (Checkout <= Checkin)
+            {
+                throw new DomainException("CHeck-out date must be ");
+            }
+
             Checkin = newCheckin;
             Checkout = newCheckout;
         }

@@ -1,5 +1,6 @@
 
-public enum Color {
+public enum Color
+{
     Black,
     Blue,
     Red

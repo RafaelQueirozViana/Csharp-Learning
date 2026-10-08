@@ -36,19 +36,28 @@ namespace RoomReservation
                 System.Console.Write("New checkout:");
                 checkout = DateTime.Parse(Console.ReadLine());
 
-
-                DateTime now = DateTime.Now;
-
-                if (checkin < now || checkout < now)
-                {
-                    System.Console.WriteLine("Error: the new date can't be before today");
-                }
-
-                else
+                try
                 {
                     reservation.UpdateDates(checkin, checkout);
-                    System.Console.WriteLine(reservation.GetReservationInfo());
                 }
+
+                catch (DomainException e)
+                {
+                    System.Console.WriteLine("Error: " + e.Message);
+                }
+
+
+
+
+
+
+
+
+
+
+
+                System.Console.WriteLine(reservation.GetReservationInfo());
+
 
 
 
