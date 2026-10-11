@@ -17,14 +17,10 @@ namespace RoomReservation
             System.Console.Write("Checkout date: ");
             DateTime checkout = DateTime.Parse(Console.ReadLine());
 
-            if (checkout <= checkin)
-            {
-                System.Console.WriteLine("Error: the checkout can't be earlier than the checkin date");
-            }
-
-            else
+            try
             {
                 Reservation reservation = new Reservation(room, checkin, checkout);
+
                 System.Console.WriteLine(reservation.GetReservationInfo());
 
                 System.Console.WriteLine("=== Update your reservation date ===");
@@ -36,32 +32,22 @@ namespace RoomReservation
                 System.Console.Write("New checkout:");
                 checkout = DateTime.Parse(Console.ReadLine());
 
-                try
-                {
-                    reservation.UpdateDates(checkin, checkout);
-                }
+                reservation.UpdateDates(checkin, checkout);
 
-                catch (DomainException e)
-                {
-                    System.Console.WriteLine("Error: " + e.Message);
-                }
+                System.Console.WriteLine("");
 
-
-
-
-
-
-
-
-
-
-
+                System.Console.WriteLine("---- Reservation Details -----");
                 System.Console.WriteLine(reservation.GetReservationInfo());
 
-
-
+                System.Console.WriteLine("");
 
             }
+
+            catch (DomainException e)
+            {
+                System.Console.WriteLine("Error: " + e.Message);
+            }
+
 
 
 
@@ -74,6 +60,7 @@ namespace RoomReservation
 
 
         }
+
 
     }
 }

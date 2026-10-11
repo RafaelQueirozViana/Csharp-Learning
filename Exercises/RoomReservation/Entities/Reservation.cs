@@ -8,9 +8,22 @@ namespace RoomReservation.Entities
 
         public Reservation(int roomNumber, DateTime checkin, DateTime checkout)
         {
+            DateTime now = DateTime.Now;
+
+            if (checkout < checkin)
+            {
+                throw new DomainException("The checkout date can't be earlier than the checkout");
+            }
+
+            if (checkin < now || checkout < now)
+            {
+                throw new DomainException("Error, the new date can't be before today");
+            }
+
             RoomNumber = roomNumber;
             Checkin = checkin;
             Checkout = checkout;
+
         }
 
         public int GetDuration()
@@ -29,7 +42,7 @@ namespace RoomReservation.Entities
 
             if (Checkout <= Checkin)
             {
-                throw new DomainException("CHeck-out date must be ");
+                throw new DomainException("Check-out date must be ");
             }
 
             Checkin = newCheckin;

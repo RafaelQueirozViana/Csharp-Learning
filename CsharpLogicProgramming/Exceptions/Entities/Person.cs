@@ -21,7 +21,7 @@ namespace Exceptions {
                 throw new DomainException("This RG is not valid");
             }
 
-            
+
 
             return "You can be free to join to the party!";
 
