@@ -12,14 +12,16 @@ namespace Exceptions {
         }
 
         public string CheckEntry(List<int> validRgList) {
-            int? result = validRgList.Find(rg => rg == Rg);
+            int result = validRgList.Find(rg => rg == Rg);
             if (Age < 18) {
                 throw new DomainException("You're younger than 18");
             }
 
-            if (result == null) {
+            if (result == 0) {
                 throw new DomainException("This RG is not valid");
             }
+
+            
 
             return "You can be free to join to the party!";
 

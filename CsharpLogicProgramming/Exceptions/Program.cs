@@ -4,7 +4,7 @@ namespace Exceptions {
         static void Main(string[] args) {
             List<int> rgList = [222, 333, 444];
 
-            System.Console.WriteLine("Party System");
+            System.Console.WriteLine("=== Party System ===");
 
             System.Console.Write("Type your name: ");
             string name = Console.ReadLine();
