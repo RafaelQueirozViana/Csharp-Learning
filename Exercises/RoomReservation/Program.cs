@@ -6,19 +6,21 @@ namespace RoomReservation
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("=== Create a reservation ===");
 
-            System.Console.Write("Type the room: ");
-            int room = int.Parse(Console.ReadLine());
-
-            System.Console.Write("Checkin date: ");
-            DateTime checkin = DateTime.Parse(Console.ReadLine());
-
-            System.Console.Write("Checkout date: ");
-            DateTime checkout = DateTime.Parse(Console.ReadLine());
 
             try
             {
+                System.Console.WriteLine("=== Create a reservation ===");
+
+                System.Console.Write("Type the room: ");
+                int room = int.Parse(Console.ReadLine());
+
+                System.Console.Write("Checkin date: ");
+                DateTime checkin = DateTime.Parse(Console.ReadLine());
+
+                System.Console.Write("Checkout date: ");
+                DateTime checkout = DateTime.Parse(Console.ReadLine());
+
                 Reservation reservation = new Reservation(room, checkin, checkout);
 
                 System.Console.WriteLine(reservation.GetReservationInfo());
@@ -46,6 +48,16 @@ namespace RoomReservation
             catch (DomainException e)
             {
                 System.Console.WriteLine("Error: " + e.Message);
+            }
+
+            catch (FormatException e)
+            {
+                System.Console.WriteLine("Input error: " + e.Message);
+            }
+
+            catch (Exception e)
+            {
+                System.Console.WriteLine("Unexpected error: " + e.Message);
             }
 
 

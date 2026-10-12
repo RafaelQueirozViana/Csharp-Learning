@@ -1,51 +1,46 @@
-﻿namespace BankAccountExercise {
-    internal class Program {
-        static void Main(string[] args) {
+﻿namespace BankAccountExercise
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                System.Console.Write("Type your account number: ");
+                int accNumber = int.Parse(Console.ReadLine());
 
+                System.Console.Write("Type your account holder: ");
+                string accHolder = Console.ReadLine();
 
-            Account a = new Account(23, "ss");
-            Account b = a;
+                Account account = new Account(accNumber, accHolder, 500, 300);
 
-            a.depositToAccount(20);
-            
-            Console.WriteLine(a.AccountBalance);
-            Console.WriteLine(b.AccountBalance);
-            Account userAccount;
+                System.Console.WriteLine("Account created succesfully!");
+                System.Console.WriteLine("---------");
+                System.Console.WriteLine(account.ToString());
+                System.Console.WriteLine("---------");
 
+                System.Console.Write("How much do you wanna deposit to your account? $");
+                double depositAmount = double.Parse(Console.ReadLine());
+                account.Deposit(depositAmount);
 
-            Console.WriteLine("Enter the account number");
-            int accountNumber = int.Parse(Console.ReadLine());
+                System.Console.Write("How much do you wanna withdraw of your account? $");
+                double withdrawAmount = double.Parse(Console.ReadLine());
+                account.WithDraw(withdrawAmount);
 
-            Console.WriteLine("Enter the account titular");
-            string titularName = Console.ReadLine();
+                System.Console.WriteLine("---------");
+                System.Console.WriteLine(account.ToString());
+                System.Console.WriteLine("---------");
 
-            Console.WriteLine("Will it have a initial deposit? (y / n)");
-            char initialDeposit = char.Parse(Console.ReadLine());
-
-            if (initialDeposit == 's') {
-                Console.WriteLine("Enter with the initial deposit value");
-                double initialValue = double.Parse(Console.ReadLine());
-                userAccount = new Account(accountNumber, titularName, initialValue);
+            }
+            catch (DomainException e)
+            {
+                System.Console.WriteLine("Account error: " + e.Message);
             }
 
-            else {
-                userAccount = new Account(accountNumber, titularName);
+            catch (Exception e)
+            {
+                System.Console.WriteLine("Unexpected error: " + e.Message);
             }
-
-            Console.WriteLine(userAccount.getAccountInfo());
-
-            Console.WriteLine("Enter a value for deposit");
-            double depositValue = double.Parse(Console.ReadLine());
-            userAccount.depositToAccount(depositValue);
-            Console.WriteLine(userAccount.getAccountInfo());
-
-
-            Console.WriteLine("Enter a value for saque");
-            double saqueValue = double.Parse(Console.ReadLine());
-            userAccount.withdrawToAccount(saqueValue);
-
-
-            Console.WriteLine(userAccount.getAccountInfo());
 
         }
     }
