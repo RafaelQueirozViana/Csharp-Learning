@@ -8,10 +8,10 @@ class Program {
             System.Console.Write("Car model: ");
             CarModel carModel = Enum.Parse<CarModel>(Console.ReadLine());
 
-            System.Console.Write("Pickup (dd/MM/yyyy hh:ss) ");
+            System.Console.Write("Pickup (dd/MM/yyyy hh:mm) ");
             DateTime pickupDate = DateTime.Parse(Console.ReadLine());
 
-            System.Console.Write("Return (dd/MM/yyyy hh:ss) ");
+            System.Console.Write("Return (dd/MM/yyyy hh:mm) ");
             DateTime returnDate = DateTime.Parse(Console.ReadLine());
 
             System.Console.Write("Enter price per hour: $");
@@ -20,12 +20,7 @@ class Program {
             System.Console.Write("Enter price per day: $");
             double pricePerDay = double.Parse(Console.ReadLine());
 
-            Car rentalCar = new Car(carModel, pickupDate, returnDate, pricePerHour, pricePerDay);
 
-            System.Console.WriteLine("INVOICE:");
-            System.Console.WriteLine("Basic Payment: $" + rentalCar.GetBasicPayment());
-            System.Console.WriteLine("Tax: $" + rentalCar.GetTax());
-            System.Console.WriteLine("Total Payment: $" + rentalCar.GetTotalPayment());
         }
 
         catch (Exception e) {
