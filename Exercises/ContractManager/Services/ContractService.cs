@@ -1,30 +1,27 @@
-using System.Buffers.Text;
 
 public class ContractService
 {
-    private ISimpleInterest _simpleInterestService;
-    private IPaymentFee _paymentFeeService;
+    private IOnlinePaymentService _onlinePaymentService;
 
-    public ContractService(ISimpleInterest simpleInterestService, IPaymentFee paymentFeeService)
+    public ContractService(IOnlinePaymentService onlinePaymentService)
     {
-        _simpleInterestService = simpleInterestService;
-        _paymentFeeService = paymentFeeService;
+        _onlinePaymentService = onlinePaymentService;
     }
 
-    public void ProcessInstallments(Contract contract, int InstallmentTotal)
+    public void ProcessInstallments(Contract contract, int months)
     {
-        double BasicValue = contract.TotalValue / InstallmentTotal;
+        double BasicValue = contract.TotalValue / months;
 
-        for (int i = 1; i <= InstallmentTotal; i++)
+        for (int i = 1; i <= months; i++)
         {
-            double simpleInterestTax = _simpleInterestService.GetTax(BasicValue, i);
-            double subtotal = BasicValue + simpleInterestTax;
-            double paymentFee = _paymentFeeService.GetFee(subtotal);
+            double simpleInterestTax = _onlinePaymentService.GetTax(BasicValue, i);
+            double subtotal = BasicValue + _onlinePaymentService.GetTax(BasicValue, i);
+            double paymentFee = _onlinePaymentService.GetFee(subtotal);
 
             DateTime dueDate = contract.ContractDate.AddMonths(i);
             Installment installment = new Installment(dueDate, BasicValue, simpleInterestTax, paymentFee);
 
-            contract.InstallmentsList.Add(installment);
+            contract.AddInstallment(installment);
         }
     }
 }

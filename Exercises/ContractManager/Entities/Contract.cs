@@ -15,5 +15,10 @@ public class Contract
         InstallmentsList = [];
     }
 
+    public void AddInstallment(Installment installment)
+    {
+        InstallmentsList.Add(installment);
+    }
+
 
 }

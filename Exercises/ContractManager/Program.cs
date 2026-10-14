@@ -18,7 +18,7 @@ class Program
         int installments = int.Parse(Console.ReadLine());
 
         Contract contract = new Contract(accountNumber, date, contractValue);
-        ContractService contractService = new ContractService(new SimpleInterestService(), new PaymentFeeService());
+        ContractService contractService = new ContractService(new PaypalService());
 
         contractService.ProcessInstallments(contract, installments);
 
