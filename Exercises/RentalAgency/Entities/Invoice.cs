@@ -10,9 +10,4 @@ public class Invoice
         Tax = tax;
         TotalPayment = basicPayment + tax;
     }
-
-
-
-
-
 }

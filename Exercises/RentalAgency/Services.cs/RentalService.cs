@@ -1,21 +1,13 @@
 public class RentalService
 {
-    public double PricePerHour { get; private set; }
-    public double PricePerDay { get; private set; }
 
-    public RentalService(double pricePerHour, double pricePerDay)
+    private ITax _taxService;
+    public RentalService(ITax taxService)
     {
-
-        if (pricePerHour <= 0 || pricePerDay <= 0)
-        {
-            throw new DomainException("The Price/hour or Price/day can't be less or equal than 0");
-        }
-
-        PricePerHour = pricePerHour;
-        PricePerDay = pricePerDay;
+        _taxService = taxService;
     }
 
-    public void ProcessRental(VehicleRental vehicleRental)
+    public void ProcessRental(VehicleRental vehicleRental, double PricePerHour, double PricePerDay)
     {
         double basicPayment = 0.0;
 
@@ -30,8 +22,8 @@ public class RentalService
             basicPayment = Math.Ceiling(duration.TotalDays) * PricePerDay;
         }
 
-        double tax = new BrazilTaxService().GetTax(basicPayment);
+        _taxService.GetTax(basicPayment);
 
-        vehicleRental.Invoice = new Invoice(basicPayment, tax);
+        vehicleRental.Invoice = new Invoice(basicPayment, _taxService.GetTax(basicPayment));
     }
 }

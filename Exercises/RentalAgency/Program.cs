@@ -23,9 +23,10 @@ class Program
             double pricePerDay = double.Parse(Console.ReadLine());
 
             VehicleRental vehicleRental = new VehicleRental(pickupDate, returnDate, new Vehicle(model));
-            RentalService rentalService = new RentalService(pricePerHour, pricePerDay);
 
-            rentalService.ProcessRental(vehicleRental);
+            RentalService rentalService = new RentalService(new BrazilTaxService());
+
+            rentalService.ProcessRental(vehicleRental, pricePerHour, pricePerDay);
 
             System.Console.WriteLine("INVOICE: ");
             System.Console.WriteLine(vehicleRental.ToString());

@@ -1,4 +1,4 @@
-public class BrazilTaxService
+public class BrazilTaxService : ITax
 {
     public double GetTax(double amount)
     {
@@ -11,9 +11,6 @@ public class BrazilTaxService
         {
             return amount * 0.15;
         }
-
-
-
     }
 
 

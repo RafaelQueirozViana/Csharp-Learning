@@ -7,7 +7,6 @@ public class VehicleRental
 
     public VehicleRental(DateTime pickupDate, DateTime returnDate, Vehicle vehicle)
     {
-
         if (returnDate < pickupDate) throw new DomainException("The return date must be after the pickup date!");
 
         PickupDate = pickupDate;
