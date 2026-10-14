@@ -1,11 +1,14 @@
 public class OrderService {
 
-    private IPayment _payment1;
-    public OrderService(IPayment payment) {
-        _payment1 = payment;
+    private IPayment _paymentService;
+    public OrderService(IPayment paymentService) {
+        _paymentService = paymentService;
     }
+
     public void PlaceOrder(Order order) {
-        _payment1.ProcessPayment(order.TotalPrice());
-       
+        PaymentStatus status = _paymentService.ProcessPayment(order.TotalPrice());
+
+        if (status == PaymentStatus.Failed) throw new DomainException("The payment failed");
+
     }
 }

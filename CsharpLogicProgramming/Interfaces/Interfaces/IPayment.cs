@@ -1,4 +1,4 @@
 public interface IPayment {
-    void ProcessPayment(double amount);
- 
+    PaymentStatus ProcessPayment(double amount);
+
 }

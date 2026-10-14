@@ -1,9 +1,18 @@
-public class PixPayment() : IPayment {
-    public void ProcessPayment(double amount) {
+public class PixPayment : IPayment {
+    public PaymentStatus ProcessPayment(double amount) {
+
         System.Console.WriteLine("QR Code generated! $" + amount);
+        bool sucessfullPayment = false;
+
+        if (!sucessfullPayment) {
+            return PaymentStatus.Failed;
+        }
+
+        else {
+            return PaymentStatus.Completed;
+        }
+
+
     }
 
-    public void outro(double amount) {
-        System.Console.WriteLine("QR Code generated! $" + amount);
-    }
 }
