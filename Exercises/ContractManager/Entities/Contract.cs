@@ -5,8 +5,6 @@ public class Contract
     public double TotalValue { get; private set; }
     public List<Installment> InstallmentsList { get; private set; }
 
-
-
     public Contract(int number, DateTime contractDate, double totalValue)
     {
         Number = number;
