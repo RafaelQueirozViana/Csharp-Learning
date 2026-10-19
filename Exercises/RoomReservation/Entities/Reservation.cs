@@ -23,7 +23,6 @@ namespace RoomReservation.Entities
             RoomNumber = roomNumber;
             Checkin = checkin;
             Checkout = checkout;
-
         }
 
         public int GetDuration()
