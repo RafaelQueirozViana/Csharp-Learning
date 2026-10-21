@@ -4,19 +4,20 @@ using System.Security.Cryptography.X509Certificates;
 namespace IComparableInterfaces {
     internal class Program {
         static void Main(string[] args) {
+
             try {
-                PrintService printService = new PrintService();
+                PrintService<string> printService = new PrintService<string>();
 
 
-                System.Console.WriteLine("Type 3 numbers between 1 and 10");
+                System.Console.WriteLine("Type 3 texts between 1 and 10");
 
                 for (int i = 1; i <= 3; i++) {
-                    System.Console.Write($"Number {i}: ");
-                    int number = int.Parse(Console.ReadLine());
+                    System.Console.Write($"Text {i}: ");
+                    string number = Console.ReadLine();
                     printService.AddValue(number);
                 }
 
-                System.Console.WriteLine("First number:" + printService.First());
+                System.Console.WriteLine("First Text:" + printService.First());
                 printService.Print();
             }
 

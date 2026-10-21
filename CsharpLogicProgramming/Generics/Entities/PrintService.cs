@@ -1,21 +1,19 @@
-public class PrintService {
-    private int[] _numbersVector;
+public class PrintService<T> {
+    private T[] _numbersVector;
     private int _count = 0;
 
     public PrintService() {
-        _numbersVector = new int[3];
-
+        _numbersVector = new T[3];
     }
-
-    public void AddValue(int value) {
-        if (_count == 10) {
-            throw new InvalidOperationException("PrintService is full!");
+    public void AddValue(T value) {
+        if (_count == 3) {
+            throw new InvalidOperationException("You can add just 3 values at maximum in the vector!");
         }
         _numbersVector[_count] = value;
         _count++;
 
     }
-    public int First() {
+    public T First() {
         if (_count == 0) {
             throw new InvalidOperationException("Error: the list is empty!");
         }
@@ -31,9 +29,7 @@ public class PrintService {
             System.Console.Write($"{_numbersVector[i - 1]}, ");
         }
 
-        System.Console.WriteLine(_numbersVector[_count - 1]);
-
-
+        System.Console.Write(_numbersVector[_count - 1]);
         System.Console.Write("]");
 
     }
