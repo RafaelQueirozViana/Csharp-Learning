@@ -1,27 +1,33 @@
-﻿namespace HashSet {
+﻿using System.Collections.ObjectModel;
+
+namespace HashSet {
     internal class Program {
         static void Main(string[] args) {
 
 
-            HashSet<string> setCollection = [];
+            SortedSet<int> a = [0, 2, 4, 6, 8];
+            SortedSet<int> b = [1, 3, 5, 7, 9];
 
-            setCollection.Add("Tv");
-            setCollection.Add("Notebook");
+            SortedSet<int> group = new SortedSet<int>(a);
+            group.UnionWith(b);
 
-            System.Console.WriteLine(setCollection);
-
-            System.Console.WriteLine(setCollection.Contains("Tv"));
-
-
+            PrintCollection<int>(a);
+            PrintCollection<int>(group);
 
 
-            foreach (string item in setCollection) {
-                System.Console.WriteLine(item);
-            }
+
+
 
 
 
         }
+        public static void PrintCollection<T>(IEnumerable<T> collection) {
+            foreach (T item in collection) {
+                System.Console.Write($"{item}, ");
+            }
+            System.Console.WriteLine("");
+        }
     }
+
 
 }
