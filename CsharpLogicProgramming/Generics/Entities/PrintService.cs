@@ -2,7 +2,7 @@ public class PrintService<T> {
     private T[] _numbersVector;
     private int _count = 0;
 
-    public PrintService() {
+     public PrintService() {
         _numbersVector = new T[3];
     }
     public void AddValue(T value) {
@@ -11,8 +11,8 @@ public class PrintService<T> {
         }
         _numbersVector[_count] = value;
         _count++;
-
     }
+    
     public T First() {
         if (_count == 0) {
             throw new InvalidOperationException("Error: the list is empty!");
