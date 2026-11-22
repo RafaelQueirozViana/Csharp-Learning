@@ -8,8 +8,9 @@ public class Calculator {
             sumTotal += currentNumber;
         }
 
-
         return sumTotal;
     }
+
+
 
 }

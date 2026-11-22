@@ -4,28 +4,21 @@ namespace HashSet {
     internal class Program {
         static void Main(string[] args) {
 
+            HashSet<Account> accounts = [new Account(23333233, "Pedro August", 19, 14000)];
 
-            SortedSet<int> a = [0, 2, 4, 6, 8];
-            SortedSet<int> b = [1, 3, 5, 7, 9];
+            accounts.Add(new Account(23333233, "Pedro August", 19, 14000));
 
-            SortedSet<int> group = new SortedSet<int>(a);
-            group.UnionWith(b);
-
-            PrintCollection<int>(a);
-            PrintCollection<int>(group);
-
-
-
-
-
-
-
+            PrintCollection<Account>(accounts);
         }
+
         public static void PrintCollection<T>(IEnumerable<T> collection) {
-            foreach (T item in collection) {
-                System.Console.Write($"{item}, ");
+
+            if (collection is IEnumerable<Account>) {
+                System.Console.WriteLine("yes");
+                foreach (T value in collection) {
+                    System.Console.WriteLine($"{value.ToString()}");
+                }
             }
-            System.Console.WriteLine("");
         }
     }
 
