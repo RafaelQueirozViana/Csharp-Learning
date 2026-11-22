@@ -15,9 +15,11 @@ public class RentalService
         RentalsList.Add(rental);
     }
 
-    public void CompleteRental(string renterName)
+    public void CompleteRental(string renterName, ReturnCondition returnCondition, double? repairPrice = null)
     {
         Rental matchingRental = RentalsList.Find(rental => rental.RenterName == renterName);
+
+        matchingRental.CheckoutRental(returnCondition, repairPrice);
 
         if (matchingRental == null)
         {
